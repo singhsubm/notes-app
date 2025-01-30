@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>App - Note | <%= note.title %> | Edit</title>
+</head>
+<body class="bg-zinc-900 text-white w-screen h-screen overflow-x-hidden">
+    <div class="w-full h-full p-10 flex flex-col gap-10">
+        <div>
+            <a href="/read" class="underline text-blue-500">Your notes.</a>
+            <h1 class="text-5xl font-semibold">Edit Note</h1>
+        </div>
+        <div>
+            <h1 class="text-xl font-semibold mb-2">Previous Data</h1>
+            <div class="flex flex-col lg:w-[60%] w-full gap-4">
+                <input type="text" placeholder="Title" readonly name="title" class="text-gray-400 font-semibold bg-zinc-800 px-4 py-1 outline-none" value="<%= note.title %>">
+                <textarea name="content" readonly class="text-gray-400 resize-none bg-zinc-800 px-4 py-1  outline-none h-40"><%= note.content %></textarea>
+            </div>
+        </div>
+        <div>
+            <h1 class="text-xl font-semibold mb-2">New Data</h1>
+            <form action="/update/<%= note._id %>" method="post" class="flex flex-col lg:w-[60%] w-full gap-4">
+                <input type="text" placeholder="Title" required name="title" class="bg-zinc-800 px-4 py-1 outline-none" value="<%= note.title %>">
+                <textarea name="content" class="resize-none bg-zinc-800 px-4 py-1  outline-none h-40"><%= note.content %></textarea>
+                <button type="submit" class=" text-black font-semibold bg-yellow-500 px-6 py-1 self-start">Update</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

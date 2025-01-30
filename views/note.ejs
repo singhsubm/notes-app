@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>App - Notes</title>
+</head>
+<body class="bg-zinc-900 text-white w-screen h-screen overflow-x-hidden">
+    <div class="w-full h-full p-10 flex flex-col gap-10">
+        <div class="w-full h-full">
+            <div class="flex gap-4">
+                <a href="/" class="underline text-blue-500">Create notes.</a>
+                <a href="/read" class="underline text-blue-500">Read notes.</a>
+            </div>
+            <h1 class="text-5xl font-semibold mt-4">Your Note</h1>
+            <br>
+            <div class="w-full h-[60%] bg-zinc-800 overflow-y-auto p-6">
+                <h1 class="capitalize text-2xl font-semibold mb-2"><%= note.title %></h1>
+                <p class="text-xl text-gray-300"><%= note.content %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
