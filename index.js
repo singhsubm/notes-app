@@ -27,13 +27,13 @@ app.post('/create', async (req, res) => {
 })
 
 app.get('/read', async (req, res) => {
-    let notes;
+    let notes = [];
     try {
         notes = await model.find()
     } catch (error) {
         console.log('first error is: ',error)
     }
-    res.render('read', { notes })
+    res.render('read', { notes: notes })
 })
 
 app.get('/delete/:id' , async (req, res) =>{
@@ -62,4 +62,4 @@ app.get('/read/:title/:id', async (req, res) => {
     res.render('note', { note })
 })
 
-app.listen(3000)
+app.listen(5000)
